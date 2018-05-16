@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
 
-import './App.css';
+import style from './style.css';
 
 const propTypes = {
   initialName: PropTypes.string
@@ -29,16 +29,12 @@ class App extends Component {
     const name = val.target.value;
 
     this.setState({ touched: true });
+    this.setState({ name });
 
-    if (name.length === 0) {
-      this.setState({ name: this.props.initialName });
-    } else {
-      this.setState({ name });
-    }
   }
 
   renderGreetingWidget() {
-    if (!this.state.touched) {
+    if (!this.state.touched || !this.state.name) {
       return null;
     }
 
@@ -52,7 +48,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
+      <div className="app">
         <h1>Hello World!</h1>
         <div>
           <p>Введите Ваше имя:</p>

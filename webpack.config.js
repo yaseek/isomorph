@@ -10,6 +10,10 @@ const publicPath         = 'http://localhost:8050/public/assets'
 const cssName            = process.env.NODE_ENV === 'production' ? 'styles-[hash].css' : 'styles.css'
 const jsName             = process.env.NODE_ENV === 'production' ? 'bundle-[hash].js' : 'bundle.js'
 
+const getModule = (id) => id
+
+const isDevelopment = process.env.NODE_ENV !== 'production'
+
 const plugins = [
   new webpack.DefinePlugin({
     'process.env': {
@@ -54,8 +58,32 @@ const config = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader'
+          {
+            loader: getModule('css-loader'),
+            options: {
+              modules: true,
+              importLoaders: 1,
+              camelCase: true,
+              localIdentName: '[local]'
+              // localIdentName: isDevelopment ? '[path][name]--[local]--[hash:base64:5]' : '[hash:base64:8]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                require(getModule('postcss-import')),
+                require(getModule('postcss-for')),
+                require(getModule('postcss-simple-vars')),
+                require(getModule('postcss-custom-properties')),
+                require(getModule('postcss-nested')),
+                require(getModule('postcss-color-function')),
+                require(getModule('autoprefixer'))({
+                  browsers: ['last 2 versions', 'ie >= 9']
+                })
+              ]
+            }
+          }
         ]
       },
       {

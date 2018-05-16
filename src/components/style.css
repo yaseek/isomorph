@@ -1,15 +1,15 @@
-.App {
+.app {
   padding: 20px;
 }
 
-.App h1 {
+.app h1 {
   font-size: 26px;
 }
 
-.App input {
+.app input {
   padding: 10px;
 }
 
-.App hr {
+.app hr {
   margin-top: 20px;
 }
