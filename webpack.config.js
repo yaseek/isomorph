@@ -72,6 +72,7 @@ const config = {
             loader: 'postcss-loader',
             options: {
               plugins: [
+                //require(getModule('postcss-autoreset')),
                 require(getModule('postcss-import')),
                 require(getModule('postcss-for')),
                 require(getModule('postcss-simple-vars')),
@@ -79,7 +80,8 @@ const config = {
                 require(getModule('postcss-nested')),
                 require(getModule('postcss-color-function')),
                 require(getModule('autoprefixer'))({
-                  browsers: ['last 2 versions', 'ie >= 9']
+                  browsers: ['last 2 versions', 'ie >= 9'],
+                  grid: false
                 })
               ]
             }

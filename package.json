@@ -21,7 +21,8 @@
     "bluebird": "~3.5.1",
     "prop-types": "~15.6.1",
     "react": "~16.3.2",
-    "react-dom": "~16.3.2"
+    "react-dom": "~16.3.2",
+    "reset-css": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "~8.2.3",

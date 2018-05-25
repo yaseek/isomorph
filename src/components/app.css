@@ -1,0 +1,147 @@
+@import 'reset-css';
+
+.first-row {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 16px;
+  margin: 16px 0;
+  -ms-grid-columns: 1fr 16px 1fr 16px 1fr;
+  -ms-grid-rows: 1fr 16px 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #ffffff;
+  color: #444444;
+}
+
+.first-row .box {
+  background-color: #444444;
+  color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.col0 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / 3;
+}
+.col0 h2 {
+  height: 50px;
+}
+
+.col1 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+.col1 h2 {
+  height: 17px;
+}
+
+.col2 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 2;
+}
+.col2 h2 {
+  height: 17px;
+}
+
+.col3 {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 1;
+  grid-column: 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span:3;
+  grid-row: 1 / 3;
+}
+.col3 h2 {
+  height: 50px;
+}
+
+.second-row {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 16px;
+  margin: 16px 0;
+  -ms-grid-columns: 1fr 16px 1fr 16px 1fr 16px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: #ffffff;
+  color: #444444;
+}
+
+.box {
+  background-color: #444444;
+  color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.col4 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: auto;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1;
+}
+.col4 h2 {
+  height: 17px;
+}
+
+.col5 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: auto;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1;
+}
+.col5 h2 {
+  height: 17px;
+}
+
+.col6 {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 1;
+  grid-column: auto;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1;
+}
+.col6 h2 {
+  height: 17px;
+}
+
+.col7 {
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 1;
+  grid-column: auto;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+}
+.col7 h2 {
+  height: 17px;
+}
+a {
+  color: #ffffff;
+}
+

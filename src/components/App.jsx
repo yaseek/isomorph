@@ -1,66 +1,63 @@
-import React, { Component } from 'react'
-import { PropTypes } from 'prop-types'
+import React from 'react'
 
-import style from './style.css';
+import './app.css'
 
-const propTypes = {
-  initialName: PropTypes.string
-};
-
-const defaultProps = {
-  initialName: 'Аноним'
-};
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.renderGreetingWidget = this.renderGreetingWidget.bind(this);
-
-    this.state = {
-      name:            this.props.initialName,
-      touched:         false,
-      greetingWidget:  () => null
-    };
-  }
-
-  handleNameChange(val) {
-    const name = val.target.value;
-
-    this.setState({ touched: true });
-    this.setState({ name });
-
-  }
-
-  renderGreetingWidget() {
-    if (!this.state.touched || !this.state.name) {
-      return null;
-    }
-
-    return (
-      <div>
-        <hr />
-        <p>Здравствуйте, {this.state.name}!</p>
-      </div>
-    );
-  }
-
-  render() {
-    return (
-      <div className="app">
-        <h1>Hello World!</h1>
-        <div>
-          <p>Введите Ваше имя:</p>
-          <div><input onChange={this.handleNameChange} /></div>
-          {this.renderGreetingWidget()}
+export const App = () => (
+  <div className="app">
+    <section className="categories">
+      <div className="first-row">
+        <div className="box col0">
+          <h2>
+            <a href="">1</a>
+            <span className="bar"></span>
+          </h2>
+        </div>
+        <div className="box col1">
+          <h2>
+            <a href="">2</a>
+            <span className="bar"></span>
+          </h2>
+        </div>
+        <div className="box col2">
+          <h2>
+            <a href="">3</a>
+            <span className="bar"></span>
+          </h2>
+        </div>
+        <div className="box col3">
+          <h2>
+            <a href="">4</a>
+            <span className="bar"></span>
+          </h2>
         </div>
       </div>
-    );
-  }
-}
+      <div className="second-row">
 
-App.propTypes = propTypes;
-App.defaultProps = defaultProps;
-
-export default App;
+        <div className="box col4">
+          <h2>
+            <a href="">5</a>
+            <span className="bar"></span>
+          </h2>
+        </div>
+        <div className="box col5">
+          <h2>
+            <a href="">6</a>
+            <span className="bar"></span>
+          </h2>
+        </div>
+        <div className="box col6">
+          <h2>
+            <a href="">7</a>
+            <span className="bar"></span>
+          </h2>
+        </div>
+        <div className="box col7">
+          <h2>
+            <a href="">8</a>
+            <span className="bar"></span>
+          </h2>
+        </div>
+      </div>
+    </section>
+  </div>
+)
